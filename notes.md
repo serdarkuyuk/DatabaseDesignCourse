@@ -102,7 +102,7 @@ a middle table (Child) combine two tables (Parent). a Foreign key will be there
 * never changing
 * never null
 
-Natural key is an email...
+
 Normal key is made up key.
 
 ## Index
@@ -112,9 +112,62 @@ key is type of index
 ## Look up tables
 keys and membership...
 Foreign constraints...
+If there is an option.. look up is good idea.
 
 * key is protect Integrity
 * unique
 * Improve functionality
 * less work
 * Allows for added complexity
+
+### superkey
+any number of columns that force every row to be unique
+> user_id > made up
+> username
+
+### candidate key
+least number of columns that force every row to be unique
+
+### Primary key
+username, email, column1+column2+columnN
+every table has one. can be combination of two or more column
+
+### Alternate Key
+all the other candidate keys does not selected as Primary key
+can be used index
+
+### Surrogate key
+User_id > has no world meaning
+
+### Natural key
+already stored in the db.
+is an email...
+
+### Foreign Key
+it is a reference to primary key
+NOT Null (cardinality) Required or not?
+They can be empty... you can design to ...
+can be change because it is reference
+
+### Foreign key constraints
+* FK constraints refers to the parent
+MySQL
+for parents
+ON DELETE
+ON UPDATE
+
+for Child
+RESTRICT (NO ACTION) can not change anything
+CASCADE > if parent deleted all FK are also deleted
+SET NULL > if parent is deleted all FK are assigned to null if foreign key is set to NOT NULL than this can not be executed.
+
+## Categeory of keys
+### Simple keys
+One column
+
+### Composite key
+Multiple columns (first name + last name + email)
+
+### Compound key
+multiple columns but all columns are keys. (intermediotary)
+combination of columns needs to be unique.
