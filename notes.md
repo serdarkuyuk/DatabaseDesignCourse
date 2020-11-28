@@ -15,7 +15,6 @@ user, tables for
 ### Attributes
 name of user, address, password etc...
 
-
 # Schemas
 
 ## Conceptual
@@ -116,9 +115,8 @@ updating index is expensive.
 is the data where the index is. (like a phonebook)
 ## Nonclustered
 Data is not where the index is (like an index at the end of a book)
-## Composite indexesÂ
+## Composite indexes
 index of two or more columns
-
 
 ## Look up tables
 keys and membership...
@@ -223,4 +221,42 @@ If a column has problem with multiple entries, create another table that refers 
 get rid of partial dependencies. check out all columns and find out the Attributes that should belong to other tables.
 
 ## 3 NF  (Transitive dependency)
-If a column is depend on another column. pull out the all columns that dependencies eachother and build a seperate table
+If a column is depend on another column. pull out the all columns that dependencies each other and build a separate table
+
+# Data datatypes
+
+## Date
+datetime, date, timestamp
+
+## Numeric
+Numbers,  
+## String
+any charachters with quatos
+"Hey" , "3", char(8) eight charachters.
+varChar(8) from 0 to 8
+
+# Joins
+
+## Inner joins
+* information had to be in both tables
+
+SELECT firstname, lastname, amountpaid
+FROM customer
+INNER JOIN card
+ON customer.custumer_id = card.customer_id
+
+### join cross multiple tables
+**user**        **comments**        **video**
+user_id PK      commentid PK        videoid PK
+username        user_id FK NN       title
+                videoid FK NN
+                comment
+user.user_id = comments.user_id
+            comments.videoid == video.videoid
+
+SELECT username, title, comment
+from user
+INNER JOIN comment
+ON user.userid = comment.userid
+INNER JOIN video
+ON video.videoid = comment.videoid
