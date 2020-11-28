@@ -1,4 +1,6 @@
 # SQL
+notes from 
+https://www.youtube.com/watch?v=ztHopE5Wnpc
 
 * DDL > data definition language
 * DML  > data manipulation language
@@ -295,4 +297,4 @@ FROM user
 SELECT v1.firstname, v1.last_name, v1.email, v2.email
 FROM user as v1
 JOIN user as v2
-ON v1.reference_by = v2.userid 
+ON v1.reference_by = v2.userid
