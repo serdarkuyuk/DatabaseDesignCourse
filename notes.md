@@ -276,3 +276,23 @@ FROM ..... > in the first table is behaves like left table
 > Not Null columns in joins.
 
 ## joins with more than two tables  
+**user**        **comments**        **video**
+user_id PK      commentid PK        videoid PK
+username        user_id FK NN       title
+                videoid FK NN
+                comment
+left other join
+all users + all comments with right join
+some users + all videos
+
+## Aliases (nickname)
+SELECT email, first_name, last_name
+FROM user
+SELECT email as "contacts", first_name as "First Name", last_name as "Last Name"
+FROM user
+
+* alias can be used in self joins
+SELECT v1.firstname, v1.last_name, v1.email, v2.email
+FROM user as v1
+JOIN user as v2
+ON v1.reference_by = v2.userid 
