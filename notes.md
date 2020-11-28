@@ -105,9 +105,20 @@ a middle table (Child) combine two tables (Parent). a Foreign key will be there
 
 Normal key is made up key.
 
-## Index
+# Index
 keys are in indexed for fast reach...
 key is type of index
+index speed up joins..
+updating index is expensive.
+
+
+## Clustered
+is the data where the index is. (like a phonebook)
+## Nonclustered
+Data is not where the index is (like an index at the end of a book)
+## Composite indexesÂ
+index of two or more columns
+
 
 ## Look up tables
 keys and membership...
@@ -171,3 +182,45 @@ Multiple columns (first name + last name + email)
 ### Compound key
 multiple columns but all columns are keys. (intermediotary)
 combination of columns needs to be unique.
+
+## Entity, EER Model, ER or ERD model
+EER > Enhanced entity relationships model
+ERD > Enhanced Relationships Diagrams
+
+* Relation refer to a table
+
+### Cardinality
+relationship type between rows of one table with another table
+
+ costumer table  <> credit card table
+
+        -|-----------<---
+Means one costumer have many cards
+
+        ->------------|-
+Means one cards have many costumer  
+
+### Modality
+means whether a child is required
+
+costumer table  <> credit card table
+
+       -|----------o-<- Can accept null charachters (zero or more)
+
+       -|----------|-<- not null (one or more) every child has a parent
+
+       -|----------o-|- (zero or more)
+
+       -|----------|-|-  Not Null (one or more)  every child has a parent
+
+# Normalization
+Correcting them to integrity issues
+
+## 1 NF (atomicity)
+If a column has problem with multiple entries, create another table that refers to the  main table. PK is always unique, FK can repeat.
+
+## 2 NF
+get rid of partial dependencies. check out all columns and find out the Attributes that should belong to other tables.
+
+## 3 NF  (Transitive dependency)
+If a column is depend on another column. pull out the all columns that dependencies eachother and build a seperate table
