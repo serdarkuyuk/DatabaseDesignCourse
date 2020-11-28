@@ -260,3 +260,19 @@ INNER JOIN comment
 ON user.userid = comment.userid
 INNER JOIN video
 ON video.videoid = comment.videoid
+
+### Outer Joins
+if there is not null statement in the ids, then it behaves like an inner join.
+* left and right is almost same depeend on which table you are feeding to table.
+#### Left
+Everything from left table.  
+#### Right
+Everything from left table.  
+#### Full
+
+SELECT first, last
+FROM ..... > in the first table is behaves like left table
+
+> Not Null columns in joins.
+
+## joins with more than two tables  
