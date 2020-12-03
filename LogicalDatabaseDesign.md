@@ -36,4 +36,4 @@ for security reason
 ![](./figure/security.png)
 
 ## One2Many
-![](./figure/enomany.png)
+![](./figure/onemany.png)
